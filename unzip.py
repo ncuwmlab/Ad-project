@@ -849,6 +849,7 @@ if __name__ == '__main__':
     worker.countConnectionTypeRate(Datalist, rate, Connection)
     #================================================================================
     '''
+    '''
     # merge rank data
     #================================================================================
     FolderPath = '/media/wmlab/Transcend/request'
@@ -885,8 +886,8 @@ if __name__ == '__main__':
     total_request = [i for i in DataDict]
     
     # 10%
-    #index = int(len(total_request) * 1)
-    total_request = [i[1] for i in total_request[:]]
+    index = int(len(total_request) * 0.1)
+    total_request = [i[1] for i in total_request[:index]]
 
     #print sum(total_request)
     print "Max: ",total_request[0]
@@ -897,16 +898,12 @@ if __name__ == '__main__':
     # standard deviation
     print "standard deviation: ",np.std(total_request)
 
-
-
-
-
-
     SavePath = "/media/wmlab/Transcend/request"
     FileName = "request-rank-data-2017-0504.txt"
     #rank_data = worker.restructureList2SaveFormat(rank_data)
 
     #worker.saveData(SavePath, FileName, rank_data)
+    '''
 
 
 
